@@ -1,0 +1,56 @@
+step 1 : installation  
+------
+https://github.com/tensorflow/models/tree/master/research/object_detection
+
+# For CPU
+pip install tensorflow
+pip install --user Cython
+pip install --user contextlib2
+pip install --user pillow
+pip install --user lxml
+pip install --user jupyter
+pip install --user matplotlib
+
+
+step 2 : Create a directory
+------
+/home/nikhom/object_det/models-master/research
+
+step 3 : Download zip file
+-------
+download from protobuf
+https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip
+dowload from github 
+https://github.com/tensorflow/models/archive/master.zip
+unzip all 2 above in this directory
+
+step 5: Go to reserch
+------ 
+At terminal 
+go in to
+/home/nikhom/object_det/models-master/research
+
+
+step 6: set protoc
+# From /home/nikhom/object_det/models-master/research
+/home/nikhom/object_det/bin/protoc object_detection/protos/*.proto --python_out=.
+
+# From /home/nikhom/object_det/models-master/research
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+
+#Testing the Installation by runnit 
+# From /home/nikhom/object_det/models-master/research
+
+ste 7 : 
+put image in 
+/home/nikhom/object_det/models-master/research/object_detection/test_images
+get image result from
+/home/nikhom/test_images
+
+step 8 : test
+python object_detection/builders/model_builder_test.py
+
+step 9: run
+go to 
+/home/nikhom/object_det/models-master/research/object_detection
+python object_detection_test.py
